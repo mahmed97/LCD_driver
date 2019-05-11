@@ -51,8 +51,7 @@ void LCD_sendCommand(uint8 command) {
 	_delay_ms(1);
 	CLEAR_BIT(LCD_CTRL_PORT, E);
 	_delay_ms(1);
-#elif
-	(DATA_BITS_MODE == 8)
+#elif (DATA_BITS_MODE == 8)
 	LCD_DATA_PORT = command; /* The required Command */
 	_delay_ms(1); /* tdws = 100ns */
 	CLEAR_BIT(LCD_CTRL_PORT, E); /* Disabling the LCD E=0 */
@@ -85,8 +84,7 @@ void LCD_displayCharachter(uint8 data) {
 	_delay_ms(1);
 	CLEAR_BIT(LCD_CTRL_PORT, E);
 	_delay_ms(1);
-#elif
-	(DATA_BITS_MODE == 8)
+#elif (DATA_BITS_MODE == 8)
 	LCD_DATA_PORT = data; /* The required Command */
 	_delay_ms(1); /* tdws = 100ns */
 	CLEAR_BIT(LCD_CTRL_PORT, E); /* Disabling the LCD E=0 */
